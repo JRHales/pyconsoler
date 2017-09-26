@@ -50,12 +50,17 @@ user = {
     "exp": 0,
     "IS ADMIN": False,
     "Position": "Temp",
+    "Security Ans": " ",
+    "pword": "",
+    "Num attemps": 0,
 }
 
-username_database = [
+local_username_database = [
     "Admin",
     "Overseer"
 ]
+
+global_username_database = []
 
 # functions
 
@@ -119,16 +124,17 @@ while (operating) # Start of the main loop
     stats(user)
     usrInp = input("What is your command? " + user.["Position"] + ">")
     time.sleep(1)
-    if usrInp == 'q' || usrInp == "quit"
-    {
-        operating = False
-    }
-    else if usrInp == 'h' || usrInp == "help"
-    {
+    if usrInp == 'q' || usrInp == "quit":    
+        operating = False    
+    else if usrInp == 'h' || usrInp == "help":    
         time.sleep(1)
         print("Command Helper v1")
         print("q or quit to exit. Please make sure all work is finalized!")
         print("mail to access mail.")
-        print("Please email IT if you are experiencing any bugs. IT@here.com")
-    }
+        print("Please email IT if you are experiencing any bugs. IT@here.com")    
+    else if userInp == "mail"
+        print(" ")    
+    else:
+        print("Invalid Command!")
+    
 }
