@@ -48,11 +48,13 @@ user = {
     "name": "user",
     "Access Level": 1,
     "exp": 0,
+    "IS ADMIN": False,
+    "Position": "Temp",
 }
 
 username_database = [
     "Admin",
-    "pX329L#s"
+    "Overseer"
 ]
 
 # functions
@@ -111,4 +113,22 @@ if newUser:
     time.sleep(1)
     username_database.append(user["name"])
 
-stats(user)
+operating = True
+while (operating) # Start of the main loop
+{
+    stats(user)
+    usrInp = input("What is your command? " + user.["Position"] + ">")
+    time.sleep(1)
+    if usrInp == 'q' || usrInp == "quit"
+    {
+        operating = False
+    }
+    else if usrInp == 'h' || usrInp == "help"
+    {
+        time.sleep(1)
+        print("Command Helper v1")
+        print("q or quit to exit. Please make sure all work is finalized!")
+        print("mail to access mail.")
+        print("Please email IT if you are experiencing any bugs. IT@here.com")
+    }
+}
