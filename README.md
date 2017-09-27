@@ -1,4 +1,4 @@
 # pyconsoler
  For internal use only!
- Only authorized users will be grante access.
+ Only authorized employees will be grante access. <br>
 Please contact dev@bitlabyrinth.com for authorization. 
