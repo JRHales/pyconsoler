@@ -79,8 +79,8 @@ def stats(spam):
     print("")
     print("")
     print("Name: " + spam["name"])
-    time.sleep(1)
     print("Access Level: {}".format(spam["Access Level"]))
+    print("Position: " + spam["Position"])
     print("")
     print("")
 
@@ -119,14 +119,14 @@ if newUser:
     username_database.append(user["name"])
 
 operating = True
-while (operating) # Start of the main loop
-{
+while operating: # Start of the main loop
+
     stats(user)
     usrInp = input("What is your command? " + user.["Position"] + ">")
     time.sleep(1)
-    if usrInp == 'q' || usrInp == "quit":    
+    if usrInp == 'q' or usrInp == "quit":    
         operating = False    
-    else if usrInp == 'h' || usrInp == "help":    
+    else if usrInp == 'h' or usrInp == "help":    
         time.sleep(1)
         print("Command Helper v1")
         print("q or quit to exit. Please make sure all work is finalized!")
@@ -137,4 +137,4 @@ while (operating) # Start of the main loop
     else:
         print("Invalid Command!")
     
-}
+
