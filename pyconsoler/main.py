@@ -48,12 +48,19 @@ user = {
     "name": "user",
     "Access Level": 1,
     "exp": 0,
+    "IS ADMIN": False,
+    "Position": "Temp",
+    "Security Ans": " ",
+    "pword": "",
+    "Num attemps": 0,
 }
 
-username_database = [
+local_username_database = [
     "Admin",
-    "pX329L#s"
+    "Overseer"
 ]
+
+global_username_database = []
 
 # functions
 
@@ -72,8 +79,8 @@ def stats(spam):
     print("")
     print("")
     print("Name: " + spam["name"])
-    time.sleep(1)
     print("Access Level: {}".format(spam["Access Level"]))
+    print("Position: " + spam["Position"])
     print("")
     print("")
 
@@ -96,7 +103,7 @@ newUser = True
 
 user["name"] = input("User Name: ")
 time.sleep(1)
-for i in username_database:
+for i in local_username_database:
     if i == user["name"]:
         print("Great")
         newUser = False
@@ -109,6 +116,25 @@ if newUser:
     print("========NEW USER DETECTED!========")
     print("")
     time.sleep(1)
-    username_database.append(user["name"])
+    local_username_database.append(user["name"])
 
-stats(user)
+operating = True
+while operating: # Start of the main loop
+
+    stats(user)
+    usrInp = input("What is your command? " + user["Position"] + ">")
+    time.sleep(1)
+    if usrInp == 'q' or usrInp == "quit":    
+        operating = False    
+    elif usrInp == 'h' or usrInp == "help":
+        time.sleep(1)
+        print("Command Helper v1")
+        print("q or quit to exit. Please make sure all work is finalized!")
+        print("mail to access mail.")
+        print("Please email IT if you are experiencing any bugs. IT@here.com")    
+    elif usrInp == "mail":
+        print(" ")    
+    else:
+        print("Invalid Command!")
+    
+
