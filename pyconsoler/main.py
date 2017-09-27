@@ -103,7 +103,7 @@ newUser = True
 
 user["name"] = input("User Name: ")
 time.sleep(1)
-for i in username_database:
+for i in local_username_database:
     if i == user["name"]:
         print("Great")
         newUser = False
@@ -116,23 +116,23 @@ if newUser:
     print("========NEW USER DETECTED!========")
     print("")
     time.sleep(1)
-    username_database.append(user["name"])
+    local_username_database.append(user["name"])
 
 operating = True
 while operating: # Start of the main loop
 
     stats(user)
-    usrInp = input("What is your command? " + user.["Position"] + ">")
+    usrInp = input("What is your command? " + user["Position"] + ">")
     time.sleep(1)
     if usrInp == 'q' or usrInp == "quit":    
         operating = False    
-    else if usrInp == 'h' or usrInp == "help":    
+    elif usrInp == 'h' or usrInp == "help":
         time.sleep(1)
         print("Command Helper v1")
         print("q or quit to exit. Please make sure all work is finalized!")
         print("mail to access mail.")
         print("Please email IT if you are experiencing any bugs. IT@here.com")    
-    else if userInp == "mail"
+    elif usrInp == "mail":
         print(" ")    
     else:
         print("Invalid Command!")
