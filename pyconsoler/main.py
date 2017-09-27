@@ -44,20 +44,21 @@ morse = {
     ",": "--..--"
 }
 
-user = {
-    "name": "user",
-    "Access Level": 1,
-    "exp": 0,
-    "IS ADMIN": False,
-    "Position": "Temp",
-    "Security Ans": " ",
-    "pword": "",
-    "Num attemps": 0,
-}
+
+class User:
+    def __init__(self, name, AccessLevel, exp, ISADMIN, Position, SecAns, pword):
+        self.name = name
+        self.AccessLevel = AccessLevel
+        self.exp = exp
+        self.ISADMIN = ISADMIN
+        self.Position = Position
+        self.SecAns = SecAns
+        self.pword = pword
+        self.numattempts = 0
+
 
 local_username_database = [
     "Admin",
-    "Overseer"
 ]
 
 global_username_database = []
@@ -66,21 +67,21 @@ global_username_database = []
 
 
 def levelup(spam):
-    need = spam["Access Level"] * 10
-    while spam["exp"] >= need:
-        spam["Access Level"] += 1
+    need = spam.AccessLevel * 10
+    while spam.exp >= need:
+        spam.AccessLevel += 1
         print("User Access Level Increased!")
-        spam["exp"] -= need
-        need = spam["Access Level"] * 10
+        spam.exp -= need
+        need = spam.AccessLevel * 10
     return spam
 
 
 def stats(spam):
     print("")
     print("")
-    print("Name: " + spam["name"])
-    print("Access Level: {}".format(spam["Access Level"]))
-    print("Position: " + spam["Position"])
+    print("Name: " + spam.name)
+    print("Access Level: {}".format(spam.AccessLevel))
+    print("Position: " + spam.Position)
     print("")
     print("")
 
@@ -101,10 +102,10 @@ print("")
 
 newUser = True
 
-user["name"] = input("User Name: ")
+user = User("", 1, 0, False, "Temp", "", " ")
 time.sleep(1)
 for i in local_username_database:
-    if i == user["name"]:
+    if i == user.name:
         print("Great")
         newUser = False
         break
@@ -116,13 +117,13 @@ if newUser:
     print("========NEW USER DETECTED!========")
     print("")
     time.sleep(1)
-    local_username_database.append(user["name"])
+    local_username_database.append(user.name)
 
 operating = True
-while operating: # Start of the main loop
+while operating:  # Start of the main loop
 
     stats(user)
-    usrInp = input("What is your command? " + user["Position"] + ">")
+    usrInp = input("What is your command? " + user.Position + ">")
     time.sleep(1)
     if usrInp == 'q' or usrInp == "quit":    
         operating = False    
@@ -136,5 +137,3 @@ while operating: # Start of the main loop
         print(" ")    
     else:
         print("Invalid Command!")
-    
-
