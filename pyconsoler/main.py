@@ -56,6 +56,7 @@ class User:
         self.pword = pword
         self.numattempts = 0
 
+# End of dictionaries
 
 local_username_database = [
     "Admin",
