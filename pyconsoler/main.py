@@ -89,7 +89,7 @@ def stats(spam):
     
 def printWord(word):
   for letter in word:
-    print(morse[letter.upper()])
+    print(morse[letter.upper()], end=" ")
     
 # End of functions
 
