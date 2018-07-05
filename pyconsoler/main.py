@@ -85,7 +85,13 @@ def stats(spam):
     print("Position: " + spam.Position)
     print("")
     print("")
-
+    
+    
+def printWord(word):
+  for letter in word:
+    print(morse[letter.upper()])
+    
+# End of functions
 
 print("")
 time.sleep(1)
